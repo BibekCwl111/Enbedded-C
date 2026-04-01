@@ -1,0 +1,31 @@
+# Build files
+*.o
+*.out
+*.elf
+*.hex
+*.bin
+*.exe
+
+# Arduino build folders
+build/
+dist/
+
+# Temporary files
+*.tmp
+*.log
+*.cache
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Wokwi temporary files (optional)
+wokwi-private.json
