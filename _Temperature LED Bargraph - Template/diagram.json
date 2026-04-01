@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "author": "Embedded C ES",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-st-nucleo-c031c6",
+      "id": "nucleo",
+      "top": -47.17,
+      "left": -48.98,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bargraph1",
+      "top": 110.4,
+      "left": 283.2,
+      "attrs": { "color": "BCYR" }
+    },
+    { "type": "wokwi-junction", "id": "j1", "top": 158.4, "left": 388.8, "attrs": {} },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -45.9,
+      "left": -192.5,
+      "rotate": 90,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "nucleo:PA3", "", [] ],
+    [ "$serialMonitor:RX", "nucleo:PA2", "", [] ],
+    [ "nucleo:D13", "bargraph1:A1", "green", [ "h0" ] ],
+    [ "nucleo:D12", "bargraph1:A2", "green", [ "h0" ] ],
+    [ "nucleo:D11", "bargraph1:A3", "green", [ "h0" ] ],
+    [ "nucleo:D10", "bargraph1:A4", "green", [ "h0" ] ],
+    [ "nucleo:D9", "bargraph1:A5", "green", [ "h0" ] ],
+    [ "nucleo:D8", "bargraph1:A6", "green", [ "h0" ] ],
+    [ "nucleo:D7", "bargraph1:A7", "green", [ "h55.25", "v-9.59" ] ],
+    [ "nucleo:D6", "bargraph1:A8", "green", [ "h74.45", "v-9.59" ] ],
+    [ "nucleo:D5", "bargraph1:A9", "green", [ "h93.65", "v-47.99" ] ],
+    [ "nucleo:D4", "bargraph1:A10", "green", [ "h103.25", "v-9.59" ] ],
+    [ "bargraph1:C1", "j1:J", "black", [ "v0", "h38.62" ] ],
+    [ "bargraph1:C2", "j1:J", "black", [ "h67.42", "v38.4" ] ],
+    [ "bargraph1:C3", "j1:J", "black", [ "h57.82", "v28.8" ] ],
+    [ "bargraph1:C4", "j1:J", "black", [ "h48.22", "v19.2" ] ],
+    [ "bargraph1:C5", "j1:J", "black", [ "h29.02", "v9.59" ] ],
+    [ "bargraph1:C6", "j1:J", "black", [ "h29.02", "v-0.01" ] ],
+    [ "bargraph1:C7", "j1:J", "black", [ "h48.22", "v-9.61" ] ],
+    [ "bargraph1:C8", "j1:J", "black", [ "h57.82", "v-19.21" ] ],
+    [ "bargraph1:C9", "j1:J", "black", [ "h67.42", "v-28.81" ] ],
+    [ "bargraph1:C10", "j1:J", "black", [ "h77.02", "v-38.41" ] ],
+    [ "j1:J", "nucleo:GND.9", "black", [ "v0", "h28.8", "v-38.4" ] ],
+    [ "ntc1:GND", "nucleo:GND.5", "black", [ "v0" ] ],
+    [ "ntc1:VCC", "nucleo:3V3.2", "red", [ "v0" ] ],
+    [ "ntc1:OUT", "nucleo:A0", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
